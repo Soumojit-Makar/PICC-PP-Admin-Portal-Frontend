@@ -1,0 +1,110 @@
+@use '@nubo-native-platform/nnp-shared-styles/src/index.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-header {
+  width: 100%;
+  height: 50px;
+  //background-color: var(--base-color-secondary);
+  // z-index: 100;
+  //color: var(--text-color-secondary);
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #6E6E6E;
+  }
+
+  &:disabled {
+    background-color: #a1a1a1;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.submenu-container {
+  background-color: var(--base-color-secondary);
+  color: var(--text-color-secondary);
+}
+
+.selected-menu {
+  background-color: var(--component-color-highlight);
+  color: var(--text-color-secondary);
+}
+
+html.dark {
+  body {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+  }
+
+  // input {
+  //   //background-color: #424242 !important;
+  //   border-color: #424242;
+  //   color: #cccccc !important;
+  // }
+  input,
+  textarea,
+  select {
+    background-color: transparent !important;
+    border-color: #424242 !important;
+    color: #ffffff !important;
+  }
+
+  select option {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+  }
+
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    color: #cccccc !important;
+    -webkit-text-fill-color: #cccccc !important;
+    opacity: 1 !important;
+  }
+
+  label {
+    color: #cccccc !important;
+  }
+
+  .nnp-main-container {
+    background-color: #121212;
+  }
+
+  /* --- ADD THIS TO FIX THE TABLE ROWS --- */
+  .MuiDataGrid-root {
+    /* Forces the grid background dark */
+    background-color: #1e1e1e !important;
+    color: #fff !important;
+
+    /* Forces the individual rows dark, overriding the beige/white stripes */
+    .MuiDataGrid-row {
+      background-color: #1e1e1e !important;
+      color: #d1d1d1 !important;
+
+      &:hover {
+        background-color: #333 !important;
+      }
+    }
+
+    /* Fixes header and cell borders */
+    .MuiDataGrid-cell {
+      border-color: #5e5e5e !important;
+    }
+
+    /* Fixes header and cell borders */
+    .MuiDataGrid-columnHeaders {
+      background-color: #5e5e5e !important;
+      height: 30 !important;
+    }
+  }
+}
